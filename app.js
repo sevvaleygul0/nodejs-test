@@ -1,6 +1,10 @@
 const request = require("supertest");
-
 const express = require("express");
+/* 
+  local imports
+*/
+const jsonData = require("./constants");
+
 const app = express();
 
 app.listen(3000, () => {
@@ -8,10 +12,7 @@ app.listen(3000, () => {
 });
 
 app.get("/name", (req, res) => {
-  const data = {
-    name: "sevval",
-  };
-  res.status(200).json(data);
+  res.status(200).json(jsonData);
 });
 
 request(app)
